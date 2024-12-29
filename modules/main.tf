@@ -28,6 +28,8 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
   node_config {
     preemptible  = true
     machine_type = var.instance_type
+    disk_size_gb = 50  # Reduce disk size to 50 GB to fit within the available quota
+    disk_type    = "pd-ssd"  # SSD type
 
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
    #  service_account = google_service_account.default.email
