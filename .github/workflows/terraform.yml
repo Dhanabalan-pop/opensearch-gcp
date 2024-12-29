@@ -37,6 +37,11 @@ jobs:
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
       run: terraform fmt -check
+    - name: Set GOOGLE_CREDENTIALS_BASE64 environment variable
+      env:
+        GOOGLE_CREDENTIALS_BASE64: ${{ secrets.GOOGLE_CREDENTIALS_BASE64 }}
+      run: |
+        echo "GOOGLE_CREDENTIALS_BASE64 is set"
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
