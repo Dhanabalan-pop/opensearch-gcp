@@ -38,8 +38,8 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
     ]
   }
     management {
-    auto_upgrade = enabled
-    auto_repair = enabled
+    auto_upgrade = true
+    auto_repair = true
   }
   
 }
