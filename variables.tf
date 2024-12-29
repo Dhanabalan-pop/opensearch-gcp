@@ -8,7 +8,7 @@ variable "project" {
 }
 variable "location" {
   type    = string
-  default = "us-central1"
+  default = "us-central1-f"
 }
 variable "cluster_name" {
   type    = string
