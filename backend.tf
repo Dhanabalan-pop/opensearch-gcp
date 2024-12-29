@@ -5,7 +5,7 @@ terraform {
     organization = "dhanabalan-gcp-org"
 
     workspaces {
-      name = "gcp-datastore"
+      name = "gke-opensearch"
     }
   }
 }
