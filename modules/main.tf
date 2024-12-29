@@ -2,7 +2,9 @@
   account_id   = "service-account-id"
   display_name = "Service Account"
 } */
-
+data "google_project" "project" {
+  project_id = var.project  # Replace with your actual project ID
+}
 resource "google_container_cluster" "primary" {
   name     = var.cluster_name
   location = var.location
