@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: opensearch-cluster-service
+  namespace: opensearch-operator
+spec:
+  selector:
+    app: opensearch-cluster  # This should match the label of the OpenSearch pods
+  ports:
+    - protocol: TCP
+      port: 9200  # OpenSearch HTTP port
+      targetPort: 9200
+    - protocol: TCP
+      port: 9300  # OpenSearch transport port
+      targetPort: 9300
