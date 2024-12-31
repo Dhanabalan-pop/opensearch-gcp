@@ -12,8 +12,8 @@ spec:
         - master
       resources:
         requests:
-          cpu: 500m
-          memory: 1Gi
+          cpu: "500m"        # Changed from integer to string
+          memory: "1Gi"
         limits:
-          cpu: 1
-          memory: 2Gi
+          cpu: "1"           # Changed from integer to string
+          memory: "2Gi"
