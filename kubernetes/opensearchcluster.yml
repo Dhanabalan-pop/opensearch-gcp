@@ -1,0 +1,19 @@
+apiVersion: opensearch.opensearch.org/v1
+kind: OpenSearchCluster
+metadata:
+  name: my-opensearch-cluster
+  namespace: opensearch-operator
+spec:
+  version: "1.0.0"
+  nodePools:
+    - name: master
+      replicas: 3
+      roles:
+        - master
+      resources:
+        requests:
+          cpu: 500m
+          memory: 1Gi
+        limits:
+          cpu: 1
+          memory: 2Gi

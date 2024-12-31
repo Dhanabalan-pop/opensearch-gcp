@@ -1,0 +1,15 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: opensearch-operator
+  namespace: opensearch-operator
+rules:
+  - apiGroups: [""]
+    resources: ["pods", "services", "endpoints", "persistentvolumeclaims"]
+    verbs: ["*"]
+  - apiGroups: ["apps"]
+    resources: ["deployments", "daemonsets", "replicasets", "statefulsets"]
+    verbs: ["*"]
+  - apiGroups: ["opensearch.opensearch.org"]
+    resources: ["opensearchclusters"]
+    verbs: ["*"]
